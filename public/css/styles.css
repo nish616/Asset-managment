@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin: auto;
+    color: rgb(255, 174, 0);
+}
+
+/* Dashboard */
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: auto 40%;
+    width : 200px;
+}
+
+.container a{
+    padding: 5px;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Employee */
+
+/* .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: auto 40%;
+    width : 200px;
+}
+
+.form-input input,label{
+    padding: 5px;
+} */
+
+.error-text{
+    color: red;
+}
+.sucess-text{
+    color: green;
+}
+

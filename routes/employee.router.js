@@ -1,13 +1,21 @@
 const router = require('express').Router();
 
-router.get('/emp', (req,res) => {
+const AddEmployee = require('../controllers/employee/employee.add');
 
-    res.render('index',{name : 'employee'});
+
+router.get('/employee', (req,res) => {
+    res.render('employee');
 });
 
 
-router.post('/emp', (req,res) => {
-    const {id,name,age,type,status} = req.body;
+router.get('/employee/add', (req,res) => {
+    res.render('employee-add');
+});
+
+router.post('/employee/add', AddEmployee);
+
+router.get('/employee/view', (req,res) => {
+    res.render('employee-view');
 });
 
 module.exports = router;

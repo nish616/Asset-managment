@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 require('pug');
 
 //DB connection
-require('./ORM/sequelize');
+require('./ORM/init')();
 
 //Routes
 const homeRoute = require('./routes/dashboard.router');
@@ -15,6 +15,8 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/', homeRoute);
 app.use('/', empRoute);
