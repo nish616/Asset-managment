@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
-const AddEmployee = require('../controllers/employee/employee.add');
+// Require controllers
+const addEmployee = require('../controllers/employee/employee.add');
 
 
 router.get('/employee', (req,res) => {
@@ -12,7 +13,9 @@ router.get('/employee/add', (req,res) => {
     res.render('employee-add');
 });
 
-router.post('/employee/add', AddEmployee);
+router.post('/employee/add', addEmployee);
+
+
 
 router.get('/employee/view', (req,res) => {
     res.render('employee-view');

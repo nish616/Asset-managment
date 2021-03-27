@@ -5,8 +5,8 @@ module .exports = async (req,res) => {
     const {name,age,position,status} = req.body;
 
     try{
-        const new_emp = await Employee.create({name : name, age: age, position : position, status : status});
-        new_emp.save();
+        const newEmp = await Employee.create({name : name, age: age, position : position, status : status});
+        newEmp.save();
         res.render('employee-add', {sucess : true});
     }
     catch(e){

@@ -46,3 +46,9 @@ h1{
     color: green;
 }
 
+/* Asset view */
+
+.container-table{
+    display : flex;
+    justify-content: center;
+}

@@ -1,0 +1,49 @@
+include header.pug
+body
+    h1 Add asset
+        .col-md-4.col-md-offset-1
+            h3.text-center Add New Asset
+            form(name="add-asset" action="/asset/add" , method="post")
+                #error 
+                    if error 
+                        p.error-text Error!
+                .form-group
+                    label(for='name') Name
+                    input#name.form-control(type='text' name='name' placeholder='Name') 
+      
+                .form-group
+                    label(for='category') Category
+                    select#position.form-control(name='category')
+                        option(value='') --Select category--
+
+                .form-group
+                    label(for='make') Make
+                    input#make.form-control(type='text' name='make' placeholder='Make')
+                
+                .form-group
+                    label(for='model') Model
+                    input#model.form-control(type='text' name='model' placeholder='Model')
+                
+                .form-group
+                    label(for='serialNumber') Serial Number
+                    input#sNumber.form-control(type='text' name='serialNumber' placeholder='serialNumber')
+                
+                .form-group
+                    label(for='purchaseValue') Name
+                    input#pValue.form-control(type='text' name='purchaseValue' placeholder='Purchase Value')
+
+                .form-group
+                    label(for='status') Status
+                    select#position.form-control(name='status')
+                        option(value='') --Select status--
+                        option(value='available') available
+                        option(value='in-use') in-use
+                        option(value='maitenence') maintenence
+                        option(value='lost') lost
+                        option(value='scrapped') scrapped
+                        
+                .form-group
+                    input#add.btn.btn-info(type="submit" value="Add")
+                #sucess     
+                    if sucess   
+                        p.sucess-text Sucess!!
