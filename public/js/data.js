@@ -1,7 +1,9 @@
 $(document).ready(function () {
     
-    const Url = 'http://localhost:3000/asset/data';
+    const Url = 'http://localhost:3000/asset/master/data';
+    
     var table = $("#asset-table").DataTable({
+        
         ajax : {
             url : Url,
             type : "GET",
@@ -33,20 +35,30 @@ $(document).ready(function () {
 
         if(name === 'edit'){
             //Auto filling form details
-            $('#modalName').val(dtRow.name);
-            $('#modalCategory').val(dtRow.category);
-            $('#modalMake').val(dtRow.make);
-            $('#modalModel').val(dtRow.model);
-            $('#modalSerialNumber').val(dtRow.serialNumber);
-            $('#modalPurchaseValue').val(dtRow.purchaseValue);
-            $('#status').val(dtRow.status);
+            $('#modalEditName').val(dtRow.name);
+            $('#modalEditCategory').val(dtRow.category);
+            $('#modalEditMake').val(dtRow.make);
+            $('#modalEditModel').val(dtRow.model);
+            $('#modalEditSerialNumber').val(dtRow.serialNumber);
+            $('#modalEditPurchaseValue').val(dtRow.purchaseValue);
+            $('#modalEditStatus').val(dtRow.status);
 
             
+            //Getting updated values
+            const editData = {
+                name : $('#modalAddName').val(),
+                category : $('#modalAddCategory').val(),
+                make : $('#modalAddMake').val(),
+                model : $('#modalAddModel').val(),
+                serialNumber : $('#modalAddSerialNumber').val(),
+                purchaseValue : $('#modalAddPurchaseValue').val(),
+                status : $('#modalAddStatus').val(),
+            };
 
             $.ajax({
                 url: Url,
                 type: 'PUT',
-                data : dtRow,
+                data : editData,
                 success: function(result) {
                     console.log(result);
                 }
@@ -69,6 +81,31 @@ $(document).ready(function () {
         }
 
     } );
+
+    $('#btn-add').on('click', function (event){
+        console.log(event);
+        const addData = {
+            name : $('#modalAddName').val(),
+            category : $('#modalAddCategory').val(),
+            make : $('#modalAddMake').val(),
+            model : $('#modalAddModel').val(),
+            serialNumber : $('#modalAddSerialNumber').val(),
+            purchaseValue : $('#modalAddPurchaseValue').val(),
+            status : $('#modalAddStatus').val(),
+        };
+        $.ajax({
+            url: Url,
+            type: 'POST',
+            data : addData,
+            success: function(result) {
+                console.log(result);
+            }
+        });
+
+        location.reload();
+
+    })
+
     
   });
 

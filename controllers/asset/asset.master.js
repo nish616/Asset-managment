@@ -1,6 +1,6 @@
 const Asset = require('../../models/asset');
 
-module .exports = async (req,res) => {
+async function add (req,res){
     console.log(req.body);
 
     const {name,category,make,model,serialNumber,purchaseValue,status} = req.body;
@@ -20,11 +20,34 @@ module .exports = async (req,res) => {
 
         newAsset.save();
 
-        res.render('asset-add', {sucess : true});
+        res.render('asset-master');
     }
     catch(err){
-        res.render('asset-add' , {error : true});
+        res.render('asset-master');
         throw err;
     }
     
 }
+
+async function get (req,res) {
+    try{
+        const getAssets = await Asset.findAll();
+        
+        let currentValue = [];
+        currentValue = getAssets.map((item) => {
+            return item.dataValues;
+        });
+
+        let asset = {
+            data : currentValue
+        };
+
+        console.log(asset);
+        res.json(asset);
+    }catch( err) {
+        throw err;
+    }
+    
+}
+
+module.exports = {add,get};

@@ -49,6 +49,7 @@ h1{
 /* Asset view */
 
 .container-table{
+    margin-top: 10px;
     display : flex;
     justify-content: center;
 }

@@ -1,0 +1,86 @@
+
+//-   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+//-   // Optional theme
+//-   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous')
+//-   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  // Latest compiled and minified JavaScript
+//-   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  
+  
+//-   link(rel='stylesheet' href='/css/style.css')
+include partials/header.pug
+link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css')
+
+.add-asset 
+    <button type="button" name="edit" value="edit" class="btn" data-toggle="modal" data-target="#addModal">Add asset </button>
+
+#addModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Edit asset
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        label(for='name') Name
+        input#modalAddName.form-control(type='text' name='name')
+        label(for='category') Category
+        input#modalAddCategory.form-control(type='text' name='category')
+        label(for='make') Make
+        input#modalAddMake.form-control(type='text' name='make')
+        label(for='model') Model
+        input#modalAddModel.form-control(type='text' name='model')
+        label(for='serialNumber') Serial Number
+        input#modalAddSerialNumber.form-control(type='text' name='serialNumber')
+        label(for='purchaseValue') Purchase Value
+        input#modalAddPurchaseValue.form-control(type='text' name='purchaseValue')
+        label(for='status') Status
+        input#modalAddStatus.form-control(type='text' name='status')
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+        button#btn-add.btn.btn-primary(type='button') Save changes 
+
+.container-table
+  table#asset-table.display(style='width:100%')
+    thead
+      tr
+        th Id
+        th Name
+        th Category
+        th Make
+        th Model
+        th Serial Number
+        th Purchase Value
+        th Status
+        th Admin Id
+        th Edit/Delete
+    tbody#list-list
+// Modal
+#editModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#editModalLabel.modal-title Edit asset
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        label(for='name') Name
+        input#modalEditName.form-control(type='text' name='name')
+        label(for='category') Category
+        input#modalEditCategory.form-control(type='text' name='category')
+        label(for='make') Make
+        input#modalEditMake.form-control(type='text' name='make')
+        label(for='model') Model
+        input#modalEditModel.form-control(type='text' name='model')
+        label(for='serialNumber') Serial Number
+        input#modalEditSerialNumber.form-control(type='text' name='serialNumber')
+        label(for='purchaseValue') Purchase Value
+        input#modalEditPurchaseValue.form-control(type='text' name='purchaseValue')
+        label(for='status') Status
+        input#modalEditStatus.form-control(type='text' name='status')
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+        button#btn-edit.btn.btn-primary(type='button') Save changes
+script(src='https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js')
+script(src='/js/data.js')
