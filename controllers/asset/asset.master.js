@@ -8,7 +8,7 @@ async function add (req,res){
     let employeeId = 1;
     try{
         const newAsset = await Asset.create({
-            name : name,
+            // name : name,
             category : category, 
             make : make, 
             model : model, 
@@ -63,7 +63,7 @@ async function update(req,res) {
         const {id,name,category,make,model,serialNumber,purchaseValue,status,branch,notes} = req.body;
 
         const [numberOfAffectedRows] = await Asset.update({
-                name : name,
+                //name : name,
                 category : category, 
                 make : make, 
                 model : model, 

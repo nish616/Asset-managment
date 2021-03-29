@@ -21,26 +21,32 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
       .modal-header
         h5#exampleModalLabel.modal-title Add asset
         button.close(type='button' data-dismiss='modal' aria-label='Close')
-          span(aria-hidden='true') &times;
+    
       .modal-body
-        label(for='name') Name
-        input#modalAddName.form-control(type='text' name='name')
-        label(for='category') Category
-        input#modalAddCategory.form-control(type='text' name='category')
-        label(for='make') Make
-        input#modalAddMake.form-control(type='text' name='make')
-        label(for='model') Model
-        input#modalAddModel.form-control(type='text' name='model')
-        label(for='serialNumber') Serial Number
-        input#modalAddSerialNumber.form-control(type='text' name='serialNumber')
-        label(for='purchaseValue') Purchase Value
-        input#modalAddPurchaseValue.form-control(type='text' name='purchaseValue')
-        label(for='status') Status
-        input#modalAddStatus.form-control(type='text' name='status')
-        label(for='branch') Branch
-        input#modalAddBranch.form-control(type='text' name='branch')
-        label(for='notes') Notes
-        input#modalAddNotes.form-control(type='text' name='notes')
+        .modal-item
+          label(for='category') Category
+          input#modalAddCategory.form-control(type='text' name='category')
+        .modal-item
+          label(for='make') Make
+          input#modalAddMake.form-control(type='text' name='make')
+        .modal-item
+          label(for='model') Model
+          input#modalAddModel.form-control(type='text' name='model')
+        .modal-item
+          label(for='serialNumber') Serial Number
+          input#modalAddSerialNumber.form-control(type='text' name='serialNumber')
+        .modal-item
+          label(for='purchaseValue') Purchase Value
+          input#modalAddPurchaseValue.form-control(type='text' name='purchaseValue')
+        .modal-item
+          label(for='status') Status
+          input#modalAddStatus.form-control(type='text' name='status')
+        .modal-item
+          label(for='branch') Branch
+          input#modalAddBranch.form-control(type='text' name='branch')
+        .modal-item
+          label(for='notes') Notes
+          input#modalAddNotes.form-control(type='text' name='notes')
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         button#btn-add.btn.btn-primary(type='button') Save changes 
@@ -50,7 +56,6 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
     thead
       tr
         th Id
-        th Name
         th Category
         th Make
         th Model
@@ -71,26 +76,30 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
         button.close(type='button' data-dismiss='modal' aria-label='Close')
           span(aria-hidden='true') &times;
       .modal-body
-        label(for='id') Id
-        input#modalEditId.form-control(type='text' name='id' disabled='')
-        label(for='name') Name
-        input#modalEditName.form-control(type='text' name='name')
-        label(for='category') Category
-        input#modalEditCategory.form-control(type='text' name='category')
-        label(for='make') Make
-        input#modalEditMake.form-control(type='text' name='make')
-        label(for='model') Model
-        input#modalEditModel.form-control(type='text' name='model')
-        label(for='serialNumber') Serial Number
-        input#modalEditSerialNumber.form-control(type='text' name='serialNumber')
-        label(for='purchaseValue') Purchase Value
-        input#modalEditPurchaseValue.form-control(type='text' name='purchaseValue')
-        label(for='status') Status
-        input#modalEditStatus.form-control(type='text' name='status')
-        label(for='branch') Branch
-        input#modalEditBranch.form-control(type='text' name='branch')
-        label(for='notes') Notes
-        input#modalEditNotes.form-control(type='text' name='notes')
+        .modal-item
+          label(for='category') Category
+          input#modalEditCategory.form-control(type='text' name='category')
+        .modal-item
+          label(for='make') Make
+          input#modalEditMake.form-control(type='text' name='make')
+        .modal-item
+          label(for='model') Model
+          input#modalEditModel.form-control(type='text' name='model')
+        .modal-item
+          label(for='serialNumber') Serial Number
+          input#modalEditSerialNumber.form-control(type='text' name='serialNumber')
+        .modal-item
+          label(for='purchaseValue') Purchase Value
+          input#modalEditPurchaseValue.form-control(type='text' name='purchaseValue')
+        .modal-item
+          label(for='status') Status
+          input#modalEditStatus.form-control(type='text' name='status')
+        .modal-item
+          label(for='branch') Branch
+          input#modalEditBranch.form-control(type='text' name='branch')
+        .modal-item
+          label(for='notes') Notes
+          input#modalEditNotes.form-control(type='text' name='notes')
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         button#btn-edit.btn.btn-primary(type='button') Save changes

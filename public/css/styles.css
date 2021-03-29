@@ -46,10 +46,31 @@ h1{
     color: green;
 }
 
-/* Asset view */
+/* Asset Master */
 
 .container-table{
     margin-top: 10px;
     display : flex;
     justify-content: center;
+}
+
+.modal-content{
+    width:400px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+.modal-item{
+    display:flex;
+    justify-content: space-between;
+}
+.modal-item input {
+    width: 50%;
+}
+
+.modal-item label,input{
+    padding: 10px;
+    
 }

@@ -12,7 +12,7 @@ $(document).ready(function () {
         },
         columns : [
             { data : 'id'},
-            { data : 'name'},
+            //{ data : 'name'},
             { data : 'category'},
             { data : 'make'},
             { data : 'model'},
@@ -38,7 +38,7 @@ $(document).ready(function () {
         if(name === 'edit'){
             //Auto filling form details
             $('#modalEditId').val(dtRow.id);
-            $('#modalEditName').val(dtRow.name);
+            //$('#modalEditName').val(dtRow.name);
             $('#modalEditCategory').val(dtRow.category);
             $('#modalEditMake').val(dtRow.make);
             $('#modalEditModel').val(dtRow.model);
@@ -73,7 +73,7 @@ $(document).ready(function () {
     $('#btn-add').on('click', function (event){
         console.log(event);
         const addData = {
-            name : $('#modalAddName').val(),
+            //name : $('#modalAddName').val(),
             category : $('#modalAddCategory').val(),
             make : $('#modalAddMake').val(),
             model : $('#modalAddModel').val(),
@@ -102,7 +102,7 @@ $(document).ready(function () {
         //Getting updated values
         const editData = {
             id : $('#modalEditId').val(),
-            name : $('#modalEditName').val(),
+            //name : $('#modalEditName').val(),
             category : $('#modalEditCategory').val(),
             make : $('#modalEditMake').val(),
             model : $('#modalEditModel').val(),
