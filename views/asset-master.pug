@@ -14,12 +14,12 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
 
 .add-asset 
     <button type="button" name="edit" value="edit" class="btn" data-toggle="modal" data-target="#addModal">Add asset </button>
-
+//add modal
 #addModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
   .modal-dialog(role='document')
     .modal-content
       .modal-header
-        h5#exampleModalLabel.modal-title Edit asset
+        h5#exampleModalLabel.modal-title Add asset
         button.close(type='button' data-dismiss='modal' aria-label='Close')
           span(aria-hidden='true') &times;
       .modal-body
@@ -37,6 +37,10 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
         input#modalAddPurchaseValue.form-control(type='text' name='purchaseValue')
         label(for='status') Status
         input#modalAddStatus.form-control(type='text' name='status')
+        label(for='branch') Branch
+        input#modalAddBranch.form-control(type='text' name='branch')
+        label(for='notes') Notes
+        input#modalAddNotes.form-control(type='text' name='notes')
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         button#btn-add.btn.btn-primary(type='button') Save changes 
@@ -53,10 +57,12 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
         th Serial Number
         th Purchase Value
         th Status
-        th Admin Id
+        th branch
+        th Employee Id
+        th Notes
         th Edit/Delete
     tbody#list-list
-// Modal
+// Edit Modal
 #editModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
   .modal-dialog(role='document')
     .modal-content
@@ -81,6 +87,10 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
         input#modalEditPurchaseValue.form-control(type='text' name='purchaseValue')
         label(for='status') Status
         input#modalEditStatus.form-control(type='text' name='status')
+        label(for='branch') Branch
+        input#modalEditBranch.form-control(type='text' name='branch')
+        label(for='notes') Notes
+        input#modalEditNotes.form-control(type='text' name='notes')
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         button#btn-edit.btn.btn-primary(type='button') Save changes

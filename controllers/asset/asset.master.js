@@ -3,9 +3,9 @@ const Asset = require('../../models/asset');
 async function add (req,res){
     console.log(req.body);
 
-    const {name,category,make,model,serialNumber,purchaseValue,status} = req.body;
+    const {name,category,make,model,serialNumber,purchaseValue,status,branch,notes} = req.body;
 
-    let adminId = 1;
+    let employeeId = 1;
     try{
         const newAsset = await Asset.create({
             name : name,
@@ -14,8 +14,10 @@ async function add (req,res){
             model : model, 
             serialNumber : serialNumber, 
             purchaseValue : purchaseValue, 
-            status : status, 
-            adminId : adminId
+            status : status,
+            branch : branch, 
+            employeeId : employeeId,
+            notes : notes
         });
 
         newAsset.save();
@@ -54,9 +56,9 @@ async function get(req,res) {
 async function update(req,res) {
     try{
         
-        let adminId = 1;
+        let employeeId = 1;
 
-        const {id,name,category,make,model,serialNumber,purchaseValue,status} = req.body;
+        const {id,name,category,make,model,serialNumber,purchaseValue,status,branch,notes} = req.body;
 
         const [numberOfAffectedRows] = await Asset.update({
                 name : name,
@@ -65,8 +67,10 @@ async function update(req,res) {
                 model : model, 
                 serialNumber : serialNumber, 
                 purchaseValue : purchaseValue, 
-                status : status, 
-                adminId : adminId
+                status : status,
+                branch : branch, 
+                employeeId : employeeId,
+                notes : notes
     }, {
         where : {id : id}
     });

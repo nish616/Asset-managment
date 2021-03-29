@@ -19,7 +19,9 @@ $(document).ready(function () {
             { data : 'serialNumber'},
             { data : 'purchaseValue'},
             { data : 'status'},
-            { data : 'adminId'},
+            { data : 'branch'},
+            { data : 'employeeId'},
+            {data : 'notes'},
             { data: '', "render": function () {
                  return '<div class="btn-group"> <button type="button" name="edit" value="edit" class="btn btn-warning" data-toggle="modal" data-target="#editModal">🖊</button><button type="button" name="delete" value="delete" class="btn btn-danger">⛔</button></div>'
                  } 
@@ -43,6 +45,8 @@ $(document).ready(function () {
             $('#modalEditSerialNumber').val(dtRow.serialNumber);
             $('#modalEditPurchaseValue').val(dtRow.purchaseValue);
             $('#modalEditStatus').val(dtRow.status);
+            $('#modalEditBranch').val(dtRow.branch);
+            $('#modalEditNotes').val(dtRow.notes);
 
 
         } else if(name === 'delete'){
@@ -76,6 +80,8 @@ $(document).ready(function () {
             serialNumber : $('#modalAddSerialNumber').val(),
             purchaseValue : $('#modalAddPurchaseValue').val(),
             status : $('#modalAddStatus').val(),
+            branch : $('#modalAddBranch').val(),
+            notes : $('#modalAddNotes').val()
         };
         $.ajax({
             url: Url,
@@ -103,6 +109,8 @@ $(document).ready(function () {
             serialNumber : $('#modalEditSerialNumber').val(),
             purchaseValue : $('#modalEditPurchaseValue').val(),
             status : $('#modalEditStatus').val(),
+            branch : $('#modalEditBranch').val(),
+            notes : $('#modalEditNotes').val()
         };
 
         console.log(editData);

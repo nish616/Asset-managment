@@ -16,7 +16,7 @@ const Asset = sequelize.define( 'Asset',{
   },
   model : {
     type : DataTypes.STRING,
-    allowNull : false
+    allowNull : true
   },
   serialNumber : {
     type : DataTypes.INTEGER,
@@ -30,9 +30,21 @@ const Asset = sequelize.define( 'Asset',{
     type : DataTypes.STRING,
     allowNull : false
   },
-  adminId : {
+  branch : {
+    type : DataTypes.STRING,
+    allowNull : false
+  },
+  employeeId : {
     type : DataTypes.INTEGER,
     allowNull : false
+  },
+  auditLog : {
+    type : DataTypes.JSONB,
+    allowNull : true
+  },
+  notes : {
+    type : DataTypes.TEXT,
+    allowNull : true
   }
 });
 
