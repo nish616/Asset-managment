@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
 app.use('/', homeRoute);
-app.use('/', empRoute);
+//app.use('/', empRoute);
 app.use('/', assetRoute);
 
 app.listen(3000,console.log('Server up and running!'));

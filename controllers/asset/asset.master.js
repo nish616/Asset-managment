@@ -20,7 +20,9 @@ async function add (req,res){
             notes : notes
         });
 
-        newAsset.save();
+        
+
+        //newAsset.save();
 
         res.render('asset-master');
     }
@@ -99,7 +101,7 @@ async function destroy(req,res){
       console.log(numAffectedRows);
       res.json({"message" : "Sucess"});
     }catch(err){
-
+        throw err;
     }
     
 
