@@ -20,8 +20,8 @@ $(document).ready(function () {
             { data : 'purchaseValue'},
             { data : 'status'},
             { data : 'adminId'},
-            { data: 'name', "render": function (item) {
-                 return '<div class="btn-group"> <button type="button" name="edit" value="edit" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">🖊</button><button type="button" name="delete" value="delete" class="btn btn-danger">⛔</button></div>'
+            { data: '', "render": function () {
+                 return '<div class="btn-group"> <button type="button" name="edit" value="edit" class="btn btn-warning" data-toggle="modal" data-target="#editModal">🖊</button><button type="button" name="delete" value="delete" class="btn btn-danger">⛔</button></div>'
                  } 
             }
         ]
@@ -35,6 +35,7 @@ $(document).ready(function () {
 
         if(name === 'edit'){
             //Auto filling form details
+            $('#modalEditId').val(dtRow.id);
             $('#modalEditName').val(dtRow.name);
             $('#modalEditCategory').val(dtRow.category);
             $('#modalEditMake').val(dtRow.make);
@@ -43,26 +44,6 @@ $(document).ready(function () {
             $('#modalEditPurchaseValue').val(dtRow.purchaseValue);
             $('#modalEditStatus').val(dtRow.status);
 
-            
-            //Getting updated values
-            const editData = {
-                name : $('#modalAddName').val(),
-                category : $('#modalAddCategory').val(),
-                make : $('#modalAddMake').val(),
-                model : $('#modalAddModel').val(),
-                serialNumber : $('#modalAddSerialNumber').val(),
-                purchaseValue : $('#modalAddPurchaseValue').val(),
-                status : $('#modalAddStatus').val(),
-            };
-
-            $.ajax({
-                url: Url,
-                type: 'PUT',
-                data : editData,
-                success: function(result) {
-                    console.log(result);
-                }
-            });
 
         } else if(name === 'delete'){
             
@@ -78,10 +59,13 @@ $(document).ready(function () {
                 }
             });
 
+            location.reload();
+
         }
 
     } );
 
+    //Modal add asset
     $('#btn-add').on('click', function (event){
         console.log(event);
         const addData = {
@@ -104,6 +88,35 @@ $(document).ready(function () {
 
         location.reload();
 
+    });
+    
+
+    //Modal edit asset
+    $('#btn-edit').on('click', function(event){
+        //Getting updated values
+        const editData = {
+            id : $('#modalEditId').val(),
+            name : $('#modalEditName').val(),
+            category : $('#modalEditCategory').val(),
+            make : $('#modalEditMake').val(),
+            model : $('#modalEditModel').val(),
+            serialNumber : $('#modalEditSerialNumber').val(),
+            purchaseValue : $('#modalEditPurchaseValue').val(),
+            status : $('#modalEditStatus').val(),
+        };
+
+        console.log(editData);
+
+        $.ajax({
+            url: Url,
+            type: 'PUT',
+            data : editData,
+            success: function(result) {
+                console.log(result);
+            }
+        });
+
+        location.reload();
     })
 
     

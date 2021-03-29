@@ -22,6 +22,10 @@ router.get('/asset/master/data', assetMaster.get);
 
 router.post('/asset/master/data', assetMaster.add);
 
+router.put('/asset/master/data', assetMaster.update);
+
+router.delete('/asset/master/data', assetMaster.destroy);
+
 
 
 module.exports = router;

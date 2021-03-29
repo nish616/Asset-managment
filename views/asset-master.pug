@@ -65,6 +65,8 @@ link(rel='stylesheet' href='https://cdn.datatables.net/1.10.24/css/jquery.dataTa
         button.close(type='button' data-dismiss='modal' aria-label='Close')
           span(aria-hidden='true') &times;
       .modal-body
+        label(for='id') Id
+        input#modalEditId.form-control(type='text' name='id' disabled='')
         label(for='name') Name
         input#modalEditName.form-control(type='text' name='name')
         label(for='category') Category
